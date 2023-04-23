@@ -1,1 +1,350 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Minigpt-4">
+  <meta name="keywords" content="GPT-4, open-source, vision-language">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT4Tools</title>
+
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- <link rel="icon" href="./static/images/icon.png"> -->
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="shortcut icon" href="path/to/favicon.ico" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  </head>
+
+  <style>
+
+    #main{
+        position: relative;;
+        width: 1200px;
+    }
+
+    .box{
+        float: left;
+        padding: 15px 0 0 15px;
+/*        background-color: red;*/
+    }
+
+    .pic{
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .pic img{
+        width: 500px;
+    }
+
+  </style>
+
+  <body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GPT4Tools:</h1>
+          <h2 class="title is-2 publication-title">Teaching LLM to Use Tools via Self-instruction</h2>
+          <div class="is-size-5">
+            <span class="author-block">
+                <a href="http://linsong.info" style="color:#008AD7;font-weight:normal;">Lin Song<sup></sup></a>,                
+            </span>
+            <span class="author-block">
+              <a href="https://yanwei-li.com/" style="color:#9900f2;font-weight:normal;">Yanwei Li<sup></sup></a>,</span>
+            <span class="author-block">
+              <a href="https://github.com/Yangr116" style="color:#00efa3;font-weight:normal;">Rui Yang</a>,
+            </span>
+            <span class="author-block">
+              <a href="" style="color:#008AD7;font-weight:normal;">Sijie Zhao</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://geyixiao.com/" style="color:#008AD7;font-weight:normal;">Yixiao Ge</a>,
+            </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en" style="color:#008AD7;font-weight:normal;">Ying Shan</a>
+              </span>
+            
+          </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Tencent AI Lab; </span>
+            <span class="author-block"><b style="color:#9900f2; font-weight:normal">&#x25B6 </b>CUHK; </span>
+            <span class="author-block"><b style="color:#00efa3; font-weight:normal">&#x25B6 </b>THU </span>
+          </div>
+
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              
+              <span class="link-block">
+                <a href="https://github.com/StevenGrove/GPT4Tools" target="_blank" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <span class="link-block">
+                      <a href="http://gpt4tools.xyz" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Demo</span>
+                    </a>
+                  </span>
+              
+              <span class="link-block">
+                <a href="https://youtu.be/Qrj94ibQIT8" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="https://huggingface.co/stevengrove/gpt4tools-vicuna-13b-lora" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-laugh"></i>
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            <strong><font>Updates</font></strong>: We now release pretrained GPT4Tools models with <strong><font color="#008AD7">Vicuna-13B</font></strong> and released the dataset for <strong><font color="#008AD7">self-instruction</font></strong>! 
+            <br>
+            </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Demo</h2>
+          <div class="content has-text-justified">
+            <p>
+              Please try our demo here, you can upload an image and chat in the box: Coming Soon!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <br>
+    <br> 
+
+<!-- <script>
+      window.addEventListener('load', function() {
+        const urls = [
+          'http://gpt4tools.xyz'
+        ];
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const randomURL = urls[randomIndex];
+        const iframe = document.getElementById('gradio');
+        iframe.setAttribute('src', randomURL);
+      });
+    </script>
+
+    <div align=center>
+    <iframe id="gradio" width="80%" height="1000">
+      <p>Gradio.</p>
+    </iframe>
+    </div>
+
+<link rel="stylesheet" type="text/css" href="js/simple_style.css" />
+<script type="text/javascript" src="js/simple_swiper.js"></script> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            GPT4Tools is a centralized system that can control multiple visual foundation models. 
+            It is based on LLaMA, and 71K self-built instruction data.
+            By analyzing the language content, GPT4Tools is capable of automatically deciding, controlling, and utilizing different visual foundation models, allowing the user to interact with images during a conversation. With this approach, GPT4Tools provides a seamless and efficient solution to fulfill various image-related requirements in a conversation. 
+            <b>Different from previous work, we support users teach their own LLM to use tools with simple refinement via self-instruction and LoRA.</b>
+</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+  <br> 
+
+<!-- Paper Model. -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Model</h2>
+      <div class="content has-text-justified">
+        <p>
+          GTP4Tools mainly contains three parts: LLM for instruction, LoRA for adaptation, and Visual Agent for provided functions.
+              It is a flexible and extensible system that can be easily extended to support more tools and functions.
+              For example, users can replace the existing LLM or tools with their own models, or add new tools to the system.
+              <b>The only things needed are finetuned the LoRA with the provided instruction</b>, which teaches LLM to use the provided tools.
+        </p>
+      </div>  
+      <img id="model" width="100%" src="images/overview.png">
+      <h3 class="subtitle has-text-centered">
+        <br>
+        <p>Human-assistant interaction workflow in GPT4Tools.</p>
+      </h3>   
+    </div>
+  </div>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Dataset</h2>
+            <div class="content has-text-justified">
+            <p>
+                We use the collected data that contains 71K instruction-following info for fine-tuning the GPT4Tools model. 
+                In particular, we fed GPT-3.5 with captions from 3K images and descriptions of 22 visual tasks. 
+                This produced 66K instructions, each corresponding to a specific visual task and a visual foundation model (tool). 
+                Subsequently, we eliminated duplicate instructions and retained 41K sound instructions. 
+                To teach the model to utilize tools in a predefined manner, we followed the format used in VisualChatGPT and converted these instructions into a conversational format.
+            </p>
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+
+<!-- <section class="hero is-small is-light">
+    <div class="hero-body"> -->
+        <div class="container">
+            <!-- Paper video. -->
+            <h2 class="title has-text-centered">Video Presentation</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+
+                    <div class="publication-video">
+                        <!-- Youtube embed code here -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Qrj94ibQIT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--/ Paper video. -->
+    <br>
+    <br>
+    
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a
+      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+                                          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</section>
+
+
+<section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Examples</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="js/Underscore-min.js"></script>
+<script src="js/index.js"></script>
+
+<section class="section">
+    <div id="main">
+      <div class="box"><div class="pic"><img src="demos/demo_0.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_1.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_2.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_3.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_4.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_5.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_6.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_7.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_8.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_9.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_10.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_11.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_12.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_13.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/demo_14.png" alt=""></div></div>
+    
+    <!-- </div> -->
+    </div>
+    
+    </section>
+
+</body>
+
+</html>
