@@ -116,7 +116,7 @@
                       <span class="icon">
                         🤗
                       </span>
-                      <span>Demo</span>
+                      <span>Space</span>
                     </a>
                   </span>
               
@@ -180,7 +180,7 @@
           <h2 class="title is-3">Demo</h2>
           <div class="content has-text-justified">
             <p>
-              Please try our demo here, you can upload an image and chat in the box. Please note that the current model only has a context memory of one paragraph. When you want to interact with images, it is recommended to add the image path before the instruction, such as "image/695a805c.png replace the cat with a dog." More features with multi-paragraph context is coming soon.
+              Please try our demo here, you can upload an image and chat in the box. When you want to interact with images, it is recommended to add the image path before the instruction, such as "image/695a805c.png replace the cat with a dog."
             </p>
           </div>
         </div>
@@ -189,23 +189,15 @@
       <br>
     <br> 
 
-<script>
-      window.addEventListener('load', function() {
-        const urls = [
-          'https://huggingface.co/spaces/stevengrove/GPT4Tools'
-        ];
-        const randomIndex = Math.floor(Math.random() * urls.length);
-        const randomURL = urls[randomIndex];
-        const iframe = document.getElementById('gradio');
-        iframe.setAttribute('src', randomURL);
-      });
-    </script>
-
-    <div align=center>
-    <iframe id="gradio" width="80%" height="1000">
-      <p>Gradio.</p>
-    </iframe>
-    </div>
+<div align="center">
+<iframe
+  id="gradio"
+	src="https://stevengrove-gpt4tools.hf.space"
+	frameborder="0"
+	width="900"
+	height="1200"
+></iframe>
+</div>
 
 <link rel="stylesheet" type="text/css" href="js/simple_style.css" />
 <script type="text/javascript" src="js/simple_swiper.js"></script>
